@@ -1,4 +1,4 @@
-package dev.designpatterns.creational.builder
+package dev.designpatterns.creational.builder.query
 
 /*
  * Tarea: crear un QueryBuilder para construir consultas SQL
@@ -31,6 +31,10 @@ interface QueryBuilder {
     fun where(condition: String): QueryBuilder
     fun orderBy(field: String, direction: Direction = Direction.ASC): QueryBuilder
     fun limit(n: Int): QueryBuilder
+}
+
+enum class Direction {
+    ASC, DESC
 }
 
 /**
@@ -115,8 +119,4 @@ class QueryBuilderImpl(private val table: String) : QueryBuilder {
 
         return queryBuilder.append(';').toString()
     }
-}
-
-enum class Direction {
-    ASC, DESC
 }

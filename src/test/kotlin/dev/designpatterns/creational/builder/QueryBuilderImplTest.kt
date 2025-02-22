@@ -1,5 +1,6 @@
 package dev.designpatterns.creational.builder
 
+import dev.designpatterns.creational.builder.query.QueryBuilderImpl
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
