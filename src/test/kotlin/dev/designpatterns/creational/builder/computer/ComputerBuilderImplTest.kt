@@ -1,6 +1,5 @@
-package dev.designpatterns.creational.builder
+package dev.designpatterns.creational.builder.computer
 
-import dev.designpatterns.creational.builder.computer.ComputerBuilderImpl
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNull
 import org.junit.jupiter.api.Test
