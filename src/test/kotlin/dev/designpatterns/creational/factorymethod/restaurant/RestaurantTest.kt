@@ -1,9 +1,9 @@
 package dev.designpatterns.creational.factorymethod.restaurant
 
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
-import kotlin.test.assertTrue
 
 class RestaurantTest {
     // Helper function to capture system output.
