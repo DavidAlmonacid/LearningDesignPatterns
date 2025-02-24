@@ -1,7 +1,6 @@
 package dev.designpatterns.creational.abstractfactory.vehicle
 
 import org.junit.jupiter.api.Test
-import kotlin.test.assertContentEquals
 import kotlin.test.assertTrue
 
 class VehicleAFTest {
