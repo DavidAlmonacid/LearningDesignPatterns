@@ -71,7 +71,7 @@ class QueryBuilderImpl(private val table: String) : QueryBuilder {
      * Adds an ORDER BY clause with the given field and direction.
      */
     override fun orderBy(field: String, direction: Direction): QueryBuilderImpl {
-        orderFields.add("$field ${direction.name}")
+        orderFields.add("$field $direction")
         return this
     }
 
