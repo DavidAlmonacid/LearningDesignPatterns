@@ -10,17 +10,19 @@ fun main() {
         movements = listOf("Vacuum Wave", "Quick Attack", "Leer", "Focus Energy")
     )
 
-    val pokemon2 = pokemon1.clone()
-    pokemon2.name = "Scizor"
-    pokemon2.level = 30u
-    pokemon2.types = listOf(PokemonType.Bug, PokemonType.Steel)
-    pokemon2.movements = listOf("Bullet Punch", "Metal Claw", "Fury Cutter", "Slash")
+    val pokemon2 = pokemon1.copy(
+        name = "Scizor",
+        level = 30u,
+        types = listOf(PokemonType.Bug, PokemonType.Steel),
+        movements = listOf("Bullet Punch", "Metal Claw", "Fury Cutter", "Slash")
+    )
 
-    val pokemon3 = pokemon1.clone()
-    pokemon3.name = "Kleavor"
-    pokemon3.level = 36u
-    pokemon3.types = listOf(PokemonType.Bug, PokemonType.Rock)
-    pokemon3.movements = listOf("Stone Axe", "Double Team", "Double Hit", "Rock Slide")
+    val pokemon3 = pokemon1.copy(
+        name = "Kleavor",
+        level = 36u,
+        types = listOf(PokemonType.Bug, PokemonType.Rock),
+        movements = listOf("Stone Axe", "Double Team", "Double Hit", "Rock Slide")
+    )
 
     println(pokemon1)
     println(pokemon2)

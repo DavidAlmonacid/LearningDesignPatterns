@@ -14,11 +14,12 @@ class PokemonTest {
             movements = listOf("Vacuum Wave", "Quick Attack", "Leer", "Focus Energy")
         )
 
-        val pokemon2 = pokemon1.clone()
-        pokemon2.name = "Scizor"
-        pokemon2.level = 30u
-        pokemon2.types = listOf(PokemonType.Bug, PokemonType.Steel)
-        pokemon2.movements = listOf("Bullet Punch", "Metal Claw", "Fury Cutter", "Slash")
+        val pokemon2 = pokemon1.copy(
+            name = "Scizor",
+            level = 30u,
+            types = listOf(PokemonType.Bug, PokemonType.Steel),
+            movements = listOf("Bullet Punch", "Metal Claw", "Fury Cutter", "Slash")
+        )
 
         // Verify that the cloned Pokémon is a different instance
         assertNotSame(pokemon1, pokemon2)
@@ -45,8 +46,9 @@ class PokemonTest {
             movements = listOf("Thunder Shock", "Quick Attack")
         )
 
-        val pokemon2 = pokemon1.clone()
-        pokemon2.movements = pokemon2.movements.toMutableList().apply { add("Iron Tail") }
+        val pokemon2 = pokemon1.copy(
+            movements = pokemon1.movements.toMutableList().apply { add("Iron Tail") }
+        )
 
         // Verify that the cloned Pokémon is a different instance
         assertNotSame(pokemon1, pokemon2)
