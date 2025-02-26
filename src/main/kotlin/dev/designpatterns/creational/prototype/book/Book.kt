@@ -13,6 +13,8 @@ sin hacer que el código dependa de sus clases.
 https://refactoring.guru/es/design-patterns/prototype
  */
 
-data class Book(var title: String, var author: String, var content: String) {
-    fun clone(): Book = Book(title, author, content)
-}
+data class Book(
+    val title: String,
+    val author: String,
+    val content: String
+)

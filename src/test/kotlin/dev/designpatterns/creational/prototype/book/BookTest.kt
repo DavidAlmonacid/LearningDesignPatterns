@@ -13,8 +13,7 @@ class BookTest {
             content = "In a hole in the ground there lived a hobbit."
         )
 
-        val book2 = book1.clone()
-        book2.title = "The Hobbit"
+        val book2 = book1.copy(title = "The Hobbit")
 
         // Verify that the cloned book is a different instance
         assertNotSame(book1, book2)
