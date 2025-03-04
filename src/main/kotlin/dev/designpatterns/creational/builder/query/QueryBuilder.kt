@@ -93,7 +93,7 @@ class QueryBuilderImpl(private val table: String) : QueryBuilder {
 
         // Append SELECT clause
         queryBuilder.append("SELECT ")
-        queryBuilder.append(tableFields.joinToString(separator = ", "))
+        queryBuilder.append(tableFields.joinToString())
 
         // Append FROM clause
         queryBuilder.append("\nFROM ")
@@ -108,7 +108,7 @@ class QueryBuilderImpl(private val table: String) : QueryBuilder {
         // Append ORDER BY clause if any order field exists
         if (orderFields.isNotEmpty()) {
             queryBuilder.append("\nORDER BY ")
-            queryBuilder.append(orderFields.joinToString(separator = ", "))
+            queryBuilder.append(orderFields.joinToString())
         }
 
         // Append LIMIT clause if a limit is set
