@@ -11,6 +11,10 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+
+    // Logger
+    implementation("io.github.oshai:kotlin-logging-jvm:7.0.4")
+    runtimeOnly("ch.qos.logback:logback-classic:1.5.17")
 }
 
 tasks.test {
