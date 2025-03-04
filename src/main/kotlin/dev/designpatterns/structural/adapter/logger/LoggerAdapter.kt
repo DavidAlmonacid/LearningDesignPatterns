@@ -1,26 +1,30 @@
 package dev.designpatterns.structural.adapter.logger
 
+import io.github.oshai.kotlinlogging.KotlinLogging
+
 interface LoggerAdapter {
-    fun writeLog()
-    fun writeWarning()
-    fun writeError()
-    fun writeDebug()
+    fun writeLog(vararg args: Any)
+    fun writeWarning(vararg args: Any)
+    fun writeError(vararg args: Any)
+    fun writeDebug(vararg args: Any)
 }
 
-class LoggerAdapterImpl : LoggerAdapter {
-    override fun writeLog() {
-        TODO("Not yet implemented")
+class LoggerAdapterImpl(file: String) : LoggerAdapter {
+    private val logger = KotlinLogging.logger(file)
+
+    override fun writeLog(vararg args: Any) {
+        logger.info { args.joinToString() }
     }
 
-    override fun writeWarning() {
-        TODO("Not yet implemented")
+    override fun writeWarning(vararg args: Any) {
+        logger.warn { args.joinToString() }
     }
 
-    override fun writeError() {
-        TODO("Not yet implemented")
+    override fun writeError(vararg args: Any) {
+        logger.error { args.joinToString() }
     }
 
-    override fun writeDebug() {
-        TODO("Not yet implemented")
+    override fun writeDebug(vararg args: Any) {
+        logger.debug { args.joinToString() }
     }
 }
