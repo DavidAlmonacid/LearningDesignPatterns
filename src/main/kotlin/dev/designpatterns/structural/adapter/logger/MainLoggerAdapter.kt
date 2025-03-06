@@ -1,12 +1,15 @@
 package dev.designpatterns.structural.adapter.logger
 
+import io.github.oshai.kotlinlogging.KotlinLogging
+import java.text.DecimalFormat
+
 fun main() {
     println("\n -- Adapter Pattern -- \n")
 
-    val logger = LoggerAdapterImpl("MainLoggerAdapter")
+    val logger = LoggerAdapterImpl(KotlinLogging.logger("MainLoggerAdapter"))
 
-    logger.writeLog(1_000_000, 0.45, Dog("Junior"), Cat("pancho"), Cat("frida"))
-    logger.writeDebug(listOf("dogs", "cats"), isCat("frida"), isDog("Pancho"))
+    logger.writeLog(DecimalFormat("#,###.##").format(1_000_000), 0.45, Dog("Junior"), Cat("pancho"), Cat("frida"))
+    logger.writeDebug(listOf("dogs", "cats"), "isCat: " + isCat("frida"), "isDog: " + isDog("Pancho"))
     logger.writeError("Set", setOf("junior", "junior", "pancho", "frida"))
     logger.writeWarning("Map", mapOf("first" to "junior", "second" to "pancho", "third" to "frida"))
 }
