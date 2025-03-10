@@ -1,6 +1,7 @@
 package dev.designpatterns.structural.adapter.payment
 
 fun main() {
+    println("\n -- Adapter Pattern - Challenge!!! -- \n")
 
     val paypalProcessor: PaymentProcessor = PaymentAdapter(PayPalService()) { service, amount ->
         service.sendPayment(amount)
